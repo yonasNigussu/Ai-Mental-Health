@@ -1,0 +1,186 @@
+{% include 'website\navbar.html' %}
+{% load static %}
+<!-- Single News -->
+<section class="news-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="single-main">
+                            <!-- News Head -->
+            
+                            <!-- News Title -->
+                            <div class="meta">
+                                <div class="meta-left">
+                                    <span class="author"><a href="#"><img src="{% static 'img/author1.jpg' %}" alt="#">Naimur Rahman</a></span>
+                                    <span class="date"><i class="fa fa-clock-o"></i>03 Feb 2019</span>
+                                </div>
+                                
+                            </div>
+                            <h1 class="news-title"><a href="news-single.html">More than 80 clinical trials launch to test of the coronavirus .</a></h1>
+                            <!-- Meta -->
+                            
+                            <!-- News Text -->
+                            <div class="news-text">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis ultricies tortor, nec sollicitudin lorem sagittis vitae. Curabitur rhoncus commodo rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec lacus pulvinar, laoreet dolor quis, pellentesque ante. Cras nulla orci, pharetra at dictum consequat, pretium pretium nulla. Suspendisse porttitor nunc a sodales tempor. Mauris sed felis maximus, interdum metus vel, tincidunt diam.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis ultricies tortor, nec sollicitudin lorem sagittis vitae. Curabitur rhoncus commodo rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec lacus pulvinar, laoreet dolor quis, pellentesque ante. Cras nulla orci, pharetra at dictum consequat, pretium pretium nulla. Suspendisse</p>
+                            </div>
+                            <div class="meta">
+                                
+                                <div class="meta-right">
+
+                                    <span class="comments"><button type="button" class="fa fa-comments" data-bs-toggle="modal" data-bs-target="#commentsModal">
+                                        05 Comments
+                                    </button></span>
+                                    <span class="views"><i class="fa fa-eye"></i>33K Views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button to Open Modal -->
+
+
+<!-- Modal -->
+                    <div class="modal fade" id="commentsModal" tabindex="-1" aria-labelledby="commentsModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="commentsModalLabel">Comments Section</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                
+                                <div class="modal-body">
+                                    <div class="blog-comments">
+                                        
+                                        
+                                        
+                                        <div class="d-flex justify-content-end p-3">
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#commentFormModal">
+                                                Leave a Comment
+                                            </button>
+                                            
+                                        </div>
+                                        <div class="comments-body">
+                                            <!-- Single Comment -->
+                                            <div class="single-comments">
+                                                <div class="main">
+                                                    <div class="head">
+                                                        <img src="{% static 'img/author1.jpg' %}" alt="#" />
+                                                    </div>
+                                                    <div class="body">
+                                                        <h4>Afsana Mimi</h4>
+                                                        <div class="comment-meta">
+                                                            <span class="meta"><i class="fa fa-calendar"></i> March 05, 2019</span>
+                                                            <span class="meta"><i class="fa fa-clock-o"></i> 03:38 AM</span>
+                                                        </div>
+                                                        <p>Lorem Ipsum available, but the majority have suffered alteration...</p>
+                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#commentFormModal">
+                                                            <i class="fa fa-reply"></i>Reply
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>        
+                                            <!-- End Single Comment -->
+
+                                            <!-- Single Comment -->
+                                            <div class="single-comments left">
+                                                <div class="main">
+                                                    <div class="head">
+                                                        <img src="{% static 'img/author2.jpg' %}" alt="#" />
+                                                    </div>
+                                                    <div class="body">
+                                                        <h4>Naimur Rahman</h4>
+                                                        <div class="comment-meta">
+                                                            <span class="meta"><i class="fa fa-calendar"></i> March 05, 2019</span>
+                                                            <span class="meta"><i class="fa fa-clock-o"></i> 03:38 AM</span>
+                                                        </div>
+                                                        <p>Lorem Ipsum available, but the majority have suffered alteration...</p>
+                                                        <a href="#"><i class="fa fa-reply"></i> Reply</a>
+                                                    </div>
+                                                </div>
+                                            </div>        
+                                            <!-- End Single Comment -->
+
+                                            <!-- Single Comment -->
+                                            <div class="single-comments">
+                                                <div class="main">
+                                                    <div class="head">
+                                                        <img src="{% static 'img/author3.jpg' %}" alt="#" />
+                                                    </div>
+                                                    <div class="body">
+                                                        <h4>Suriya Molharta</h4>
+                                                        <div class="comment-meta">
+                                                            <span class="meta"><i class="fa fa-calendar"></i> March 05, 2019</span>
+                                                            <span class="meta"><i class="fa fa-clock-o"></i> 03:38 AM</span>
+                                                        </div>
+                                                        <p>Lorem Ipsum available, but the majority have suffered alteration...</p>
+                                                        <a href="#"><i class="fa fa-reply"></i> Reply</a>
+                                                    </div>
+                                                </div>
+                                            </div>        
+                                            <!-- End Single Comment -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+<!-- Bootstrap CSS & JS (Include in your project if not already included) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+                    <div class="modal fade" id="commentFormModal" tabindex="-1" aria-labelledby="commentFormModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="commentFormModalLabel">Leave a Comment</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form" method="post" action="{% static 'mail/mail.php' %}">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <div class="form-group">
+                                                    <i class="fa fa-user"></i>
+                                                    <input type="text" name="first-name" class="form-control" placeholder="First name" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <div class="form-group">
+                                                    <i class="fa fa-user"></i>
+                                                    <input type="text" name="last-name" class="form-control" placeholder="Last name" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <i class="fa fa-envelope"></i>
+                                                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <i class="fa fa-pencil"></i>
+                                                    <textarea name="message" rows="4" class="form-control" placeholder="Type Your Message Here"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary w-100"><i class="fa fa-send"></i> Submit Comment</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!--/ End Single News -->
+
+{% include 'website\footer.html' %}
