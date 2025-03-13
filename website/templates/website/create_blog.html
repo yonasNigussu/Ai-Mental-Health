@@ -1,0 +1,47 @@
+{% include 'website\navbar.html' %}
+{% load static %}
+<section class="news-single section">
+    <div class="container">
+        <div class="row">
+            
+<div class="col-12">
+    <div class="comments-form">
+        <h2>Create Blog</h2>
+        <!-- Contact Form -->
+        <form class="form" method="post" >
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="form-group">
+                        <i class="fa fa-user"></i>
+                        <input type="text" name="name" placeholder=" name">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="form-group">
+                        <i class="fa fa-envelope"></i>
+                        <input type="text" name="title" placeholder="title" required="required">
+                    </div>
+                </div>
+    
+                <div class="col-12">
+                    <div class="form-group message">
+                        <i class="fa fa-pencil"></i>
+                        <textarea name="detail" rows="7" placeholder="Type detail here"></textarea>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group button">
+                        <button type="submit" class="btn primary"><i class="fa fa-send"></i>Post Blog</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!--/ End Contact Form -->
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+
+{% include 'website\footer.html' %}
