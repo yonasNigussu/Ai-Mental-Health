@@ -1,0 +1,26 @@
+ 
+# Virtual environment
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Django secret key
+.env
+
+# MySQL database ignore (specific to dump files)
+*.sql
+*.sql.gz
+*.db
+
+# Static and media files (if generated dynamically)
+staticfiles/
+media/
+
+# VSCode and IDE-specific files
+.vscode/
+.idea/
