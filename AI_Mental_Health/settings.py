@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ai_mental',
         'USER': 'root',  # Default XAMPP MySQL user
-        'PASSWORD': '',  # Default is blank unless you set a password
+        'PASSWORD': '12345',  # Default is blank unless you set a password
         'HOST': '127.0.0.1',  # XAMPP MySQL server
         'PORT': '3306',       # Default MySQL port
     }
