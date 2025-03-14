@@ -8,22 +8,16 @@
     <div class="comments-form">
         <h2>Create Blog</h2>
         <!-- Contact Form -->
-        <form class="form" method="post" >
+        <form class="form" method="post" action="{% url 'add_blog' %}">
             {% csrf_token %}
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-12">
-                    <div class="form-group">
-                        <i class="fa fa-user"></i>
-                        <input type="text" name="name" placeholder=" name">
-                    </div>
-                </div>
+                <input type="hidden" name="name" placeholder="Name" value="Anonymous">
                 <div class="col-lg-4 col-md-4 col-12">
                     <div class="form-group">
                         <i class="fa fa-envelope"></i>
-                        <input type="text" name="title" placeholder="title" required="required">
+                        <input type="text" name="title" placeholder="Title" required="required">
                     </div>
                 </div>
-    
                 <div class="col-12">
                     <div class="form-group message">
                         <i class="fa fa-pencil"></i>
@@ -32,11 +26,12 @@
                 </div>
                 <div class="col-12">
                     <div class="form-group button">
-                        <button type="submit" class="btn primary"><i class="fa fa-send"></i>Post Blog</button>
+                        <button type="submit" class="btn primary"><i class="fa fa-send"></i> Post Blog</button>
                     </div>
                 </div>
             </div>
         </form>
+        
         <!--/ End Contact Form -->
     </div>
 </div>
