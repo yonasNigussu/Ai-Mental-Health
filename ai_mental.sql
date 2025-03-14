@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2025 at 03:53 PM
+-- Generation Time: Mar 14, 2025 at 08:37 PM
 -- Server version: 11.6.2-MariaDB
 -- PHP Version: 8.2.12
 
@@ -85,7 +85,15 @@ INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALU
 (21, 'Can add session', 6, 'add_session'),
 (22, 'Can change session', 6, 'change_session'),
 (23, 'Can delete session', 6, 'delete_session'),
-(24, 'Can view session', 6, 'view_session');
+(24, 'Can view session', 6, 'view_session'),
+(25, 'Can add blog', 7, 'add_blog'),
+(26, 'Can change blog', 7, 'change_blog'),
+(27, 'Can delete blog', 7, 'delete_blog'),
+(28, 'Can view blog', 7, 'view_blog'),
+(29, 'Can add comment', 8, 'add_comment'),
+(30, 'Can change comment', 8, 'change_comment'),
+(31, 'Can delete comment', 8, 'delete_comment'),
+(32, 'Can view comment', 8, 'view_comment');
 
 -- --------------------------------------------------------
 
@@ -106,6 +114,13 @@ CREATE TABLE `auth_user` (
   `is_active` tinyint(1) NOT NULL,
   `date_joined` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `auth_user`
+--
+
+INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
+(1, 'pbkdf2_sha256$870000$CJjl8Cj6tgYm8M0vbv9rwA$qZVJ0vZS2Rd8lvdzh4N30ROX4VY+MXo4qWKdl1ssSFc=', '2025-03-13 18:19:34.574427', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2025-03-13 08:52:10.145506');
 
 -- --------------------------------------------------------
 
@@ -170,7 +185,9 @@ INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
 (2, 'auth', 'permission'),
 (4, 'auth', 'user'),
 (5, 'contenttypes', 'contenttype'),
-(6, 'sessions', 'session');
+(6, 'sessions', 'session'),
+(7, 'website', 'blog'),
+(8, 'website', 'comment');
 
 -- --------------------------------------------------------
 
@@ -207,7 +224,9 @@ INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
 (15, 'auth', '0010_alter_group_name_max_length', '2025-03-12 14:39:33.617826'),
 (16, 'auth', '0011_update_proxy_permissions', '2025-03-12 14:39:33.643719'),
 (17, 'auth', '0012_alter_user_first_name_max_length', '2025-03-12 14:39:33.972335'),
-(18, 'sessions', '0001_initial', '2025-03-12 14:39:34.594201');
+(18, 'sessions', '0001_initial', '2025-03-12 14:39:34.594201'),
+(19, 'website', '0001_initial', '2025-03-13 15:57:20.046755'),
+(20, 'website', '0002_comment_alter_blog_name', '2025-03-14 07:43:43.480656');
 
 -- --------------------------------------------------------
 
@@ -220,6 +239,53 @@ CREATE TABLE `django_session` (
   `session_data` longtext NOT NULL,
   `expire_date` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `website_blog`
+--
+
+CREATE TABLE `website_blog` (
+  `id` bigint(20) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `detail` longtext NOT NULL,
+  `created_at` datetime(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `website_blog`
+--
+
+INSERT INTO `website_blog` (`id`, `name`, `title`, `detail`, `created_at`) VALUES
+(1, 'jonas', 'nm', 'nb', '2025-03-14 08:47:12.195557'),
+(2, 'Anonymous', 'nbbv', 'jhvbgv', '2025-03-14 08:49:27.898157'),
+(3, 'Anonymous', 'ksjdnfkcs', 'jksdmfns,dm f,smdf', '2025-03-14 08:50:21.075535'),
+(4, 'Anonymous', 'heaven', 'How can I manage my time better to reduce stress?', '2025-03-14 17:29:30.699051'),
+(5, 'Anonymous', 'Dealing with Anxiety? Let’s Talk!', 'Anxiety can be tough, but small changes can help! Here are some quick tips to stay calm:\r\n\r\n???? Deep Breathing – Inhale for 4 seconds, hold for 4, exhale for 4.\r\n???? 5-4-3-2-1 Grounding – Name 5 things you see, 4 you can touch, 3 you hear, 2 you smell, 1 you taste.\r\n???? Challenge Your Thoughts – Ask yourself, “Is this thought really true?”\r\n????‍♂️ Move Your Body – A quick walk or stretch can reduce tension.\r\n\r\nWhat helps YOU when you feel anxious? Drop your best tip in the comments! ????????', '2025-03-14 19:15:22.613467');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `website_comment`
+--
+
+CREATE TABLE `website_comment` (
+  `id` bigint(20) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `comment` longtext NOT NULL,
+  `created_at` datetime(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `website_comment`
+--
+
+INSERT INTO `website_comment` (`id`, `name`, `comment`, `created_at`) VALUES
+(1, 'Anonymous', 'sdsd', '2025-03-14 07:46:46.043578'),
+(2, 'Anonymous', 'yonasj jkh', '2025-03-14 17:30:00.008606'),
+(3, 'Anonymous', 'asdjkajksdhajdkasmndanm\r\njbasjnbaksndm\r\nashdbjasbd', '2025-03-14 19:16:09.410538');
 
 --
 -- Indexes for dumped tables
@@ -299,6 +365,18 @@ ALTER TABLE `django_session`
   ADD KEY `django_session_expire_date_a5c62663` (`expire_date`);
 
 --
+-- Indexes for table `website_blog`
+--
+ALTER TABLE `website_blog`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `website_comment`
+--
+ALTER TABLE `website_comment`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -318,13 +396,13 @@ ALTER TABLE `auth_group_permissions`
 -- AUTO_INCREMENT for table `auth_permission`
 --
 ALTER TABLE `auth_permission`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `auth_user`
 --
 ALTER TABLE `auth_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `auth_user_groups`
@@ -348,13 +426,25 @@ ALTER TABLE `django_admin_log`
 -- AUTO_INCREMENT for table `django_content_type`
 --
 ALTER TABLE `django_content_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `django_migrations`
 --
 ALTER TABLE `django_migrations`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `website_blog`
+--
+ALTER TABLE `website_blog`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `website_comment`
+--
+ALTER TABLE `website_comment`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

@@ -4,12 +4,15 @@ from django.utils import timezone  # Import timezon
 from .models import Blog
 from django.http import HttpResponse
 from .models import Comment
+from django.http import JsonResponse
 
 # Create your views here.
 
 
 def home(request):
     return render(request, "website/index.html")
+def chat(request):
+    return render(request, "website/chatbot.html")
 def blog(request):
     
     comments = Comment.objects.all().order_by('-created_at')  # Fetch all comments, newest first
@@ -52,3 +55,14 @@ def submit_comment(request):
 def display_comments(request):
     comments = Comment.objects.all().order_by('-created_at')  # Fetch all comments, newest first
     return render(request, 'website/blog.html', {'comments': comments})
+
+def chatbot_response(request):
+    if request.method == "POST":
+        user_message = request.POST.get('message')
+        
+        # Dummy AI Response (Replace this with real logic)
+        bot_response = f"You said: {user_message}"
+        
+        return JsonResponse({"response": bot_response})
+
+    return JsonResponse({"response": "Invalid request"}, status=400)

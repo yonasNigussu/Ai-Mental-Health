@@ -13,6 +13,8 @@ urlpatterns = [
     path('add_blog/', add_blog, name='add_blog'),
     path('submit_comment/', views.submit_comment, name='submit_comment'),
     
-    #path('show_comments/', views.show_comments, name='show_comments'),
+    
+    path('chatbot-response/', views.chatbot_response, name='chatbot_response'),
+    
     
 ]
